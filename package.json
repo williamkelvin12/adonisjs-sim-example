@@ -1,0 +1,77 @@
+{
+  "name": "adonisjs-sim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/providers/SimProvider.js",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "clean": "del-cli build",
+    "compile": "npm run clean && tsc && npm run copy:files",
+    "build": "npm run compile",
+    "copy:files": "copyfiles \"templates/**/*.txt\" build && npm run copy:instructions_md",
+    "copy:instructions_md": "copyfiles \"instructions.md\" build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamkelvin12/adonisjs-sim-example.git"
+  },
+  "author": "williamkelvin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamkelvin12/adonisjs-sim-example/issues"
+  },
+  "homepage": "https://github.com/williamkelvin12/adonisjs-sim-example#readme",
+  "peerDependencies": {
+    "@adonisjs/core": "^5.1.0",
+    "@adonisjs/session": "^6.0.0",
+    "@adonisjs/view": "^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@adonisjs/session": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@adonisjs/core": "^5.1.0",
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@adonisjs/session": "^6.0.0",
+    "@adonisjs/view": "^6.0.0",
+    "@types/node": "^20.4.5",
+    "del-cli": "^5.0.0",
+    "mrm": "^4.1.17",
+    "typescript": "^5.1.6"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [],
+    "minNodeVersion": "16.13.1",
+    "probotApps": []
+  },
+  "files": [
+    "build/adonis-typings",
+    "build/providers",
+    "build/src",
+    "build/templates",
+    "build/instructions.md"
+  ],
+  "adonisjs": {
+    "instructionsMD": "./build/instructions.md",
+    "types": "@williamkelvin/adonisjs-sim",
+    "providers": [
+      "@williamkelvin/adonisjs-sim"
+    ],
+    "templates": {
+      "config": [
+        "honeypot.txt"
+      ]
+    }
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}
