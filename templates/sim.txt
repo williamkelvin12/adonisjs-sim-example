@@ -1,6 +1,0 @@
-import { SimConfig } from '@ioc:Adonis/Sim'
-
-export const simConfig: SimConfig = {
-  user: 'william',
-  port: 3000
-}

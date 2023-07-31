@@ -1,6 +1,6 @@
 {
   "name": "adonisjs-sim",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "build/providers/SimProvider.js",
   "scripts": {
@@ -64,12 +64,7 @@
     "types": "@williamkelvin/adonisjs-sim",
     "providers": [
       "@williamkelvin/adonisjs-sim"
-    ],
-    "templates": {
-      "config": [
-        "honeypot.txt"
-      ]
-    }
+    ]
   },
   "dependencies": {
     "copyfiles": "^2.4.1"

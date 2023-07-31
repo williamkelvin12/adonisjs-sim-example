@@ -3,5 +3,5 @@ inside your `start/kernel.ts` file.
 
 ```ts
 Server.middleware.registerNamed({
-  sim: () => import('@ioc:Adonis/Sim')
+  sim: () => import('@ioc:William/Sim')
 })```
